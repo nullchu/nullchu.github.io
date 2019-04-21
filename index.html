@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>	<style type="text/css">
+
+/*＊  Salem Bahr, CIS 1402-02, Homework, "mazda5", three buttons to change an image with an alert if same image is selected twice. ＊*/
+
+body {
+	  background-color:#1d1e2a;
+	   background-image:url('img/gif.gif');
+	   background-attachment: fixed;
+    background-size: cover;
+      
+} 
+
+/*＊ layer to make text more legible against the wallpaper 
+＊*/
+.layer {
+ display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+ align-items: center;
+  text-align: center;
+    background-color: #E2FFFFCC;
+    position: center;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+}
+/*＊ layer for buttons and their text＊*/
+.buttonlayer {
+ display: flex;
+  justify-content: center;
+ align-items: center;
+ flex-wrap: wrap;
+  text-align: center;
+    background-color: #E2FFFFCC;
+    position: center;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+}
+/*＊ milk buttons ＊*/
+	.strawbutton {
+	background-color: #F6B6C3e0;
+	border: none;
+    font-family : inherit;
+	color: #323232;
+	padding: 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 18px;
+	margin: 4px 2px;
+	cursor: GRAB;
+	border-radius:35%
+}
+	.chocobutton {
+	background-color: #A68B76e0;
+	border: none;
+    font-family : inherit;
+	color: #323232;
+	padding: 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 18px;
+	margin: 4px 2px;
+	cursor: GRAB;
+	border-radius:35%
+}
+	.milkbutton {
+	background-color: #F4F0EAe0;
+	border: none;
+    font-family : inherit;
+	color: #323232;
+	padding: 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+	margin: 4px 2px;
+	cursor: GRAB;
+	border-radius:35%
+}
+
+/*＊ shadow effect for better visibility against light layer ＊*/
+.strawberrycandy{
+  color: #AAC6D1;
+  text-shadow: -.5px -.5px 0 #EFBDC7, .5px .5px 0 #D9845499, -1px 1px 0 #D9845499;
+}.milkcandy{
+  color: #AAC6D1;
+  text-shadow: -.5px -.5px 0 #EFEFEA, .5px .5px 0 #EFC38599, -1px 1px 0 #EFC38599;
+}.chocolatecandy{
+  color: #AAC6D1;
+  text-shadow: -.5px -.5px 0 #A99483, .5px .5px 0 #7A4E3299,-1px 1px 0 #7A4E3299;
+}
+
+/*＊ beautiful font from https://welina.xyz/font/tegaki/ちはや純/ ＊*/
+
+@font-face {
+    font-family: 'jyun';
+    src: url('font/jyun-webfont.woff2') format('woff2'),
+         url('font/jyun-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body,td,th {
+	font-family: 'jyun';
+	font-size: 15px;
+	color: #323232;	
+}
+.h1{
+	font-family: 'jyun';
+	font-size: 35px;
+	color: #323232;	
+}
+</style>
+
+<script>
+/*＊ modifying your circle script ＊*/
+
+function changemilkstrawberry()
+
+{
+
+element=document.getElementById('milk')
+
+if (element.src.match("img/strawberry.png"))
+  {
+  alert("🍓えと。。It's already strawberry!🍓");
+  }
+else
+  {
+  element.src="img/strawberry.png";
+  }
+}
+function changemilkchoco()
+{
+element=document.getElementById('milk')
+if (element.src.match("/img/chocolate.png"))  
+  {
+  alert("🍫えと。。It's already chocolate! 🍫");
+  }
+else
+  {
+  element.src="img/chocolate.png";
+  }
+}
+function changemilkregular()
+{
+element=document.getElementById('milk')
+if (element.src.match("img/milk.png"))
+  {
+  alert("🥛	えと。。It's already regular!🥛");
+  }
+else
+  {
+  element.src="img/milk.png";
+  }
+}
+</script>
+</head>
+<body>
+
+<center>
+<div class="layer">
+<h1 class="h1">choose a <font color=#ECB6C1>fl</font><font color=#A99280>av</font><font color=#EDEBE6>or</font> for your milk!</h1>
+<img id="milk" 
+src="img/milk.png"></div><div class="buttonlayer">
+<button type="button" class="strawbutton" onclick="changemilkstrawberry()">strawberry</button>&#183;&#183;&#183;&#183;
+&#183;&#183;&#183;&#183;<font color=#ECB6C1><div class="strawberrycandy">&#9733;いちごミルク&#9733;</font></div></div></div> 
+<div class="buttonlayer">
+<button type="button" class="chocobutton" onclick="changemilkchoco()">chocolate</button>&#183;&#183;&#183;&#183;&#183;&#183;&#183;&#183;&#183;<font color="#E17981"></font>&#183;&#183;&#183;&#183;&#183;&#183;&#183;<font color=#A99280><div class="chocolatecandy">	&#9733;チョコレートミルク&#9733;</font></div></div>
+<div class="buttonlayer">
+<button type="button" class="milkbutton" onclick="changemilkregular()">regular</button>&#183;&#183;&#183;&#183;&#183;&#183;&#183;&#183;</font><font color=#EDEBE6><div class="milkcandy">
+&#9733;レギュラーミルク&#9733;</font></div></div>
+</body>
+
+</html>
